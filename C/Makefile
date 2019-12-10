@@ -5,7 +5,7 @@ CE = \033[0m
 CB = \033[34m
 
 SRC_C = Colleen.c
-SRC_G = Grace.c
+SRC_G = Grace_kid.c
 SRC_S = Sully.c
 
 OBJ_C = $(SRC_C:.c=.o)
@@ -28,13 +28,15 @@ Sully: $(OBJ_S)
 
 start:
 	@echo "\n";
-	@echo "			$(CG)       ::::::::  :::    ::::::::::::::::::    ::::::::::::: $(CE)";
-	@echo "			$(CG)     :+:    :+: :+:    :+:    :+:    :+:+:   :+::+:         $(CE)";
-	@echo "			$(CG)    +:+    +:+ +:+    +:+    +:+    :+:+:+  +:++:+          $(CE)";
-	@echo "			$(CG)   +#+    +:+ +#+    +:+    +#+    +#+ +:+ +#++#++:++#      $(CE)";
-	@echo "			$(CG)  +#+    +#+ +#+    +#+    +#+    +#+  +#+#+#+#+            $(CE)";
-	@echo "			$(CG) #+#    #+# #+#    #+#    #+#    #+#   #+#+##+#             $(CE)";
-	@echo "			$(CG)################### ##############    ##############       $(CE)";
+	@echo "			$(CG)       ::::::::    :::    :::  ::::::::::  ::::   ::::  :::::::: $(CE)";
+	@echo "			$(CG)     :+:    :+:   :+:    :+:     :+:      :+:+:   :+:  ::+:      $(CE)";
+	@echo "			$(CG)    +:+    +:+   +:+    +:+     +:+      :+:+:+  +:+  ++:+       $(CE)";
+	@echo "			$(CG)   +#+    +:+   +#+    +:+     +#+      +#+ +:+ +#+  ++#++:++#   $(CE)";
+	@echo "			$(CG)  +#+    +#+   +#+    +#+     +#+      +#+  +#+#+#  #+#+         $(CE)";
+	@echo "			$(CG) #+#+#+##+#   #+#    #+#     #+#      #+#   #+#+#  ##+#          $(CE)";
+	@echo "			$(CG)       ###   ##########  ##########  ##    #####  ##########     $(CE)";
+	@echo "			$(CG)      ###                                                        $(CE)";
+	@echo "			$(CG)     ###                                                         $(CE)";
 	@echo "\n";
 
 
@@ -42,13 +44,13 @@ start:
 	@echo "$(CY)[QUINE] :$(CE) $(CG)Compiling $<$(CE)";
 	@clang $(FLAG) -c $< -o $@ $(INC)
 
-clean: start
+clean:
 	@echo "\033[K$(CY)[QUINE] :$(CE) $(CG)Cleaning object files$(CE)";
 	@/bin/rm -rf $(OBJ_S) $(OBJ_G) $(OBJ_C)
 
 fclean: clean
 	@echo "\033[K$(CY)[QUINE] :$(CE) $(CG)Cleaning binary files$(CE)";
-	@/bin/rm -rf Sully Colleen Grace Sully_* Grace_kid.c
+	@/bin/rm -rf Sully Colleen Grace Sully_*
 
 re: fclean all
 
