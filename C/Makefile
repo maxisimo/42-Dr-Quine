@@ -1,11 +1,11 @@
-FLAG= -Wall -Werror -Wall
+FLAG= -Wall -Werror -Wextra
 CG = \033[92m
 CY =  \033[93m
 CE = \033[0m
 CB = \033[34m
 
 SRC_C = Colleen.c
-SRC_G = Grace_kid.c
+SRC_G = Grace.c
 SRC_S = Sully.c
 
 OBJ_C = $(SRC_C:.c=.o)
@@ -50,7 +50,7 @@ clean:
 
 fclean: clean
 	@echo "\033[K$(CY)[QUINE] :$(CE) $(CG)Cleaning binary files$(CE)";
-	@/bin/rm -rf Sully Colleen Grace Sully_*
+	@/bin/rm -rf Sully Colleen Grace Sully_* Grace_kid.c
 
 re: fclean all
 
