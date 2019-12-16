@@ -1,8 +1,7 @@
-FLAG= -Wall -Werror -Wall
-CG = \033[92m
-CY =  \033[93m
-CE = \033[0m
-CB = \033[34m
+FLAG= -Wall -Werror -Wextra
+BLUE1 =  \033[38;5;51m
+BLUE2 = \033[38;5;99m
+END = \033[0m
 
 SRC_C = Colleen.s
 SRC_G = Grace.s
@@ -15,41 +14,41 @@ OBJ_S = $(SRC_S:.s=.o)
 all: start Colleen Grace Sully
 
 Colleen: $(OBJ_C)
-	@echo "$(CY)[QUINE] :$(CE) $(CG)Compiling Colleen ...$(CE)";
+	@echo "$(BLUE1)[QUINE] :$(END) $(BLUE2)Compiling Colleen ...$(END)";
 	@gcc $(OBJ_C) -o Colleen
 
 Grace: $(OBJ_G)
-	@echo "$(CY)[QUINE] :$(CE) $(CG)Compiling Grace ...$(CE)";
+	@echo "$(BLUE1)[QUINE] :$(END) $(BLUE2)Compiling Grace ...$(END)";
 	@gcc $(OBJ_G) -o Grace
 
 Sully: $(OBJ_S)
-	@echo "$(CY)[QUINE] :$(CE) $(CG)Compiling Sully ...$(CE)";
+	@echo "$(BLUE1)[QUINE] :$(END) $(BLUE2)Compiling Sully ...$(END)";
 	@gcc $(OBJ_S) -o Sully
 
 start:
 	@echo "\n";
-	@echo "			$(CG)       ::::::::    :::    :::  ::::::::::  ::::   ::::  :::::::: $(CE)";
-	@echo "			$(CG)     :+:    :+:   :+:    :+:     :+:      :+:+:   :+:  ::+:      $(CE)";
-	@echo "			$(CG)    +:+    +:+   +:+    +:+     +:+      :+:+:+  +:+  ++:+       $(CE)";
-	@echo "			$(CG)   +#+    +:+   +#+    +:+     +#+      +#+ +:+ +#+  ++#++:++#   $(CE)";
-	@echo "			$(CG)  +#+    +#+   +#+    +#+     +#+      +#+  +#+#+#  #+#+         $(CE)";
-	@echo "			$(CG) #+#+#+##+#   #+#    #+#     #+#      #+#   #+#+#  ##+#          $(CE)";
-	@echo "			$(CG)       ###   ##########  ##########  ##    #####  ##########     $(CE)";
-	@echo "			$(CG)      ###                                                        $(CE)";
-	@echo "			$(CG)     ###                                                         $(CE)";
+	@echo "			\\033[38;5;45m       ::::::::    :::    :::  ::::::::::  ::::   ::::  :::::::: $(END)";
+	@echo "			\\033[38;5;39m     :+:    :+:   :+:    :+:     :+:      :+:+:   :+:  ::+:      $(END)";
+	@echo "			\\033[38;5;33m    +:+    +:+   +:+    +:+     +:+      :+:+:+  +:+  ++:+       $(END)";
+	@echo "			\\033[38;5;26m   +#+    +:+   +#+    +:+     +#+      +#+ +:+ +#+  ++#++:++#   $(END)";
+	@echo "			\\033[38;5;21m  +#+    +#+   +#+    +#+     +#+      +#+  +#+#+#  #+#+         $(END)";
+	@echo "			\\033[38;5;20m #+#+#+##+#   #+#    #+#     #+#      #+#   #+#+#  ##+#          $(END)";
+	@echo "			\\033[38;5;19m       ###   ##########  ##########  ##    #####  ##########     $(END)";
+	@echo "			\\033[38;5;18m      ###                                                        $(END)";
+	@echo "			\\033[38;5;17m     ###                                                         $(END)";
 	@echo "\n";
 
 
 %.o: %.s
-	@echo "$(CY)[QUINE] :$(CE) $(CG)Compiling $<$(CE)";
+	@echo "$(BLUE1)[QUINE] :$(END) $(BLUE2)Compiling $<$(END)";
 	@nasm -f macho64 $<
 
 clean:
-	@echo "\033[K$(CY)[QUINE] :$(CE) $(CG)Cleaning object files$(CE)";
+	@echo "\033[K$(BLUE1)[QUINE] :$(END) $(BLUE2)Cleaning object files$(END)";
 	@/bin/rm -rf $(OBJ_S) $(OBJ_G) $(OBJ_C)
 
 fclean: clean
-	@echo "\033[K$(CY)[QUINE] :$(CE) $(CG)Cleaning binary files$(CE)";
+	@echo "\033[K$(BLUE1)[QUINE] :$(END) $(BLUE2)Cleaning binary files$(END)";
 	@/bin/rm -rf Sully Colleen Grace Sully_*
 
 re: fclean all
