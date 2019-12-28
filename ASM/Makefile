@@ -44,12 +44,14 @@ start:
 	@nasm -f macho64 $<
 
 clean:
-	@echo "\033[K$(BLUE1)[QUINE] :$(END) $(BLUE2)Cleaning object files$(END)";
+	@echo "\033[K$(BLUE1)[QUINE] :$(END) $(BLUE2)Cleaning object files ...$(END)";
 	@/bin/rm -rf $(OBJ_S) $(OBJ_G) $(OBJ_C)
+	@echo "$(BLUE2)Done$(END)";
 
 fclean: clean
-	@echo "\033[K$(BLUE1)[QUINE] :$(END) $(BLUE2)Cleaning binary files$(END)";
+	@echo "\033[K$(BLUE1)[QUINE] :$(END) $(BLUE2)Cleaning binary files ...$(END)";
 	@/bin/rm -rf Sully Colleen Grace Sully_*
+	@echo "$(BLUE2)Done$(END)";
 
 re: fclean all
 
