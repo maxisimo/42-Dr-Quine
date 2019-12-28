@@ -4,30 +4,36 @@
 %define CHILD "Grace_kid.s"
 
 section .data
-hello:
-	.string db STRING, 0
-	.file db CHILD, 0
+	fd dq 0
+	string db STRING, 0
+	filename db CHILD, 0
+	len equ $ - string
+	file db CHILD, 0
 
 %macro start 1
 
-extern _main, _fprintf
+extern _main
 
 _main:
-	push rbp
+	push rbp,
 	mov rbp, rsp
-	lea rdi, [rel hello.file]
-	mov rsi, 0x0202
-	mov rax, 0x2000005
+	mov rax, 0x2000005 ; open
+	mov rdi, filename
+	mov rsi, 0x0202 ; create file + RW mode
 	syscall
-	mov rdi, rax
-	lea rsi, [rel hello.string]
-	lea rdx, [rel hello.string]
-	mov rcx, 10
-	mov r8, 34
-	mov r9, 9
-	call _fprintf
-	leave
-	ret
+
+	mov rax, 0x2000004 ; write
+	mov rdi, fd
+	mov rsi, string ; STRING
+	mov rdx, len ; size of STRING
+	mov rcx, 9
+	mov r8, 10
+	mov r9, 34
+	syscall
+
+	mov rax, 0x2000006 ; close
+	mov rdi, fd
+	syscall
 
 %endmacro
 
