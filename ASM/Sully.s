@@ -8,7 +8,7 @@ output_name:
 command:
 	db "nasm -f macho64 %2$s && gcc -o %1$s %3$s && ./%1$s", 0
 file_content:
-	db "", 0
+	db "section .data%1$ccheck_file:%1$c%3$cdb %2$cSully_5.s%2$c, 0%1$cfile_name:%1$c%3$cdb %2$cSully_%%d.%%c%2$c, 0%1$coutput_name:%1$c%3$cdb %2$cSully_%%d%2$c, 0%1$ccommand:%1$c%3$cdb %2$cnasm -f macho64 %%2$s && gcc -o %%1$s %%3$s && ./%%1$s%2$c, 0%1$cfile_content:%1$c%3$cdb %2$c%4$s%2$c, 0%1$c%1$csection .bss", 0
 
 section .bss
 final_cmd:	resb 255
@@ -76,8 +76,9 @@ create_file:
 	lea rsi, [rel file_content]
 	mov rdx, 10
 	mov rcx, 34
-	lea r8, [rel file_content]
-	mov r9, [rel file_num]
+    mov r8, 9
+	lea r9, [rel file_content]
+	mov r10, [rel file_num]
 	lea rbx, [rel file_name]
 	push rbx
 	lea rbx, [rel output_name]
