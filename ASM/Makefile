@@ -50,7 +50,7 @@ clean:
 
 fclean: clean
 	@echo "\033[K$(BLUE1)[QUINE] :$(END) $(BLUE2)Cleaning binary files ...$(END)";
-	@/bin/rm -rf Sully Colleen Grace Sully_*
+	@/bin/rm -rf Sully Colleen Grace Sully_* Grace_kid.s
 	@echo "$(BLUE2)Done$(END)";
 
 re: fclean all

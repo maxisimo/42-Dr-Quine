@@ -8,14 +8,14 @@ output_name:
 command:
 	db "nasm -f macho64 %2$s && gcc -o %1$s %3$s && ./%1$s", 0
 file_content:
-	db "Ceci est un test", 0
+	db "", 0
 
 section .bss
-final_cmd:  resb    255
-path:       resb    15
-output:     resb    15
-object:     resb    15
-file_num:   resb    4
+final_cmd:	resb 255
+path:		resb 15
+output:		resb 15
+object:		resb 15
+file_num:	resb 4
 
 section .text
 	global _main
@@ -25,76 +25,77 @@ section .text
 	extern _access
 
 _main:
-    push    rbx
-    mov     rdi, 5
-    mov     [rel file_num], rdi
-    lea     rdi, [rel check_file]
-    mov     rsi, 0x04
-    call    _access
-    cmp     rax, -1
-    je     create_path
-    mov     rdi, [rel file_num]
-    dec     rdi
-    mov     [rel file_num], rdi
+	push rbx
+	mov rdi, 5
+	mov [rel file_num], rdi
+	lea rdi, [rel check_file]
+	mov rsi, 0x04
+	call _access
+	cmp rax, -1
+	je create_path
+	mov rdi, [rel file_num]
+	dec rdi
+	mov [rel file_num], rdi
 
 create_path:
-    lea     rdi, [rel path]
-    lea     rsi, [rel file_name]
-    mov     rdx, [rel file_num]
-    mov     rcx, 's'
-    call    _sprintf
+	lea rdi, [rel path]
+	lea rsi, [rel file_name]
+	mov rdx, [rel file_num]
+	mov rcx, 's'
+	call _sprintf
 
 create_object:
-    lea     rdi, [rel object]
-    lea     rsi, [rel file_name]
-    mov     rdx, [rel file_num]
-    mov     rcx, 'o'
-    call    _sprintf
+	lea rdi, [rel object]
+	lea rsi, [rel file_name]
+	mov rdx, [rel file_num]
+	mov rcx, 'o'
+	call _sprintf
 
 create_output:
-    lea     rdi, [rel output]
-    lea     rsi, [rel output_name]
-    mov     rdx, [rel file_num]
-    call    _sprintf
+	lea rdi, [rel output]
+	lea rsi, [rel output_name]
+	mov rdx, [rel file_num]
+	call _sprintf
 
 create_command:
-    lea     rdi, [rel final_cmd]
-    lea     rsi, [rel command]
-    lea     rdx, [rel output]
-    lea     rcx, [rel path]
-    lea     r8, [rel object]
-    call    _sprintf
+	lea rdi, [rel final_cmd]
+	lea rsi, [rel command]
+	lea rdx, [rel output]
+	lea rcx, [rel path]
+	lea r8, [rel object]
+	call _sprintf
 
 create_file:
-    lea rdi, [rel path]
-    mov rsi, 0x202
-    mov rax, 0x2000005
-    mov rdx, 644o
-    syscall
-    mov     rdi, rax
-    lea     rsi, [rel file_content]
-    mov     rdx, 10
-    mov     rcx, 34
-    lea     r8, [rel file_content]
-    mov     r9, [rel file_num]
-    lea     rbx, [rel file_name]
-    push    rbx
-    lea     rbx, [rel output_name]
-    push    rbx
-    lea     rbx, [rel command]
-    push    rbx
-    push    rbx
-    call    _dprintf
-    pop     rbx
-    pop     rbx
-    pop     rbx
-    pop     rbx
-    mov     r12, [rel file_num]
-    cmp     r12, 0
-    jle      exit
-    lea     rdi, [rel final_cmd]
-    call    _system
+	lea rdi, [rel path]
+	mov rsi, 0x202
+	mov rax, 0x2000005
+	mov rdx, 644o
+	syscall
+
+	mov rdi, rax
+	lea rsi, [rel file_content]
+	mov rdx, 10
+	mov rcx, 34
+	lea r8, [rel file_content]
+	mov r9, [rel file_num]
+	lea rbx, [rel file_name]
+	push rbx
+	lea rbx, [rel output_name]
+	push rbx
+	lea rbx, [rel command]
+	push rbx
+	push rbx
+	call _dprintf
+	pop rbx
+	pop rbx
+	pop rbx
+	pop rbx
+	mov r12, [rel file_num]
+	cmp r12, 0
+	jle exit
+	lea rdi, [rel final_cmd]
+	call _system
 
 exit:
-    pop     rbx
-    ret
+	pop rbx
+	ret
