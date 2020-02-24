@@ -14,11 +14,11 @@ This small algo project invites you to confront the principle of self-reproducti
 
 ## Table of Contents
 - [Mandatory part](#Mandatory-part)
-    - [Colleen](Colleen)
-    - [Grace](Grace)
-    - [Sully](Sully)
-    - [Compilling](Compilling)
-    - [Running](Running)
+    - [Colleen](colleen)
+    - [Grace](grace)
+    - [Sully](sully)
+    - [Compilling](compilling)
+    - [Running](running)
 - [Bonuses](Bonuses)
     - [Prerequies](Prerequies)
     - [Usage](Usage)
