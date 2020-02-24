@@ -13,7 +13,7 @@
 This small algo project invites you to confront the principle of self-reproduction and the problems that derive from it. It is a perfect introduction to more complex projects, particularly malware projects.
 
 ## Table of Contents
-- [Mandatory part](#Mandatory part)
+- [Mandatory part](#Mandatory-part)
     - [Colleen](Colleen)
     - [Grace](Grace)
     - [Sully](Sully)
