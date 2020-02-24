@@ -12,6 +12,17 @@
 
 This small algo project invites you to confront the principle of self-reproduction and the problems that derive from it. It is a perfect introduction to more complex projects, particularly malware projects.
 
+## Table of Contents
+- [Mandatory part](#Mandatory part)
+    - [Colleen](Colleen)
+    - [Grace](Grace)
+    - [Sully](Sully)
+    - [Compilling](Compilling)
+    - [Running](Running)
+- [Bonuses](Bonuses)
+    - [Prerequies](Prerequies)
+    - [Usage](Usage)
+
 ## Mandatory part
 For this project, you will have to recode three different programs, each with different properties. Each programs will have to be coded in C and in Assembly, and respectivly in a folder named C and ASM, each folders containing its own Makefile with the usual rules.
 ### Colleen
