@@ -53,4 +53,14 @@ run `make`
 ```
 ## Bonuses
 The only Bonus accepted during p2p is to have redone this project entirely in the language of your choice.
-I choosed to redone it in JavaScript.
+I choosed to redone it in Python.
+
+### Prerequies
+For the bonuses, this project uses [Homebrew](https://brew.sh/) and [Python](https://programwithus.com/learn-to-code/install-python3-mac/). Go check them out if you don't have them locally installed.
+
+### Usage
+```
+python3 Colleen
+python3 Grace
+python3 Sully
+```
