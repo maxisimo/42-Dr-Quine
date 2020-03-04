@@ -8,7 +8,7 @@ output_name:
 command:
 	db "nasm -f macho64 %2$s && gcc -o %1$s %3$s && ./%1$s", 0
 file_content:
-	db "section .data%1$ccheck_file:%1$c%3$cdb %2$cSully_5.s%2$c, 0%1$cfile_name:%1$c%3$cdb %2$cSully_%%d.%%c%2$c, 0%1$coutput_name:%1$c%3$cdb %2$cSully_%%d%2$c, 0%1$ccommand:%1$c%3$cdb %2$cnasm -f macho64 %%2$s && gcc -o %%1$s %%3$s && ./%%1$s%2$c, 0%1$cfile_content:%1$c%3$cdb %2$c%4$s%2$c, 0%1$c%1$csection .bss%1$cfinal_cmd:%3$cresb 255%1$cpath:%3$c%3$cresb 15%1$coutput:%3$c%3$cresb 15%1$cobject:%3$c%3$cresb 15%1$cfile_num:%3$cresb 4%1$c%1$csection .text%1$c%3$cglobal _main%1$c%3$cextern _sprintf%1$c%3$cextern _dprintf%1$c%3$cextern _system%1$c%3$cextern _access%1$c%1$c_main:%1$c	push rbx%1$c%3$cmov rdi, %5$d%1$c%3$cmov [rel file_num], rdi%1$c%3$clea rdi, [rel check_file]%1$c%3$cmov rsi, 0x04%1$c%3$ccall _access%1$c%3$ccmp rax, -1%1$c%3$cje create_path%1$c%3$cmov rdi, [rel file_num]%1$c%3$cdec rdi%1$c%3$cmov [rel file_num], rdi%1$c%1$ccreate_path:%1$c%3$clea rdi, [rel path]%1$c%3$clea rsi, [rel file_name]%1$c%3$cmov rdx, [rel file_num]%1$c%3$cmov rcx, 's'%1$c%3$ccall _sprintf%1$c%1$ccreate_object:%1$c%3$clea rdi, [rel object]%1$c%3$clea rsi, [rel file_name]%1$c%3$cmov rdx, [rel file_num]%1$c%3$cmov rcx, 'o'%1$c%3$ccall _sprintf%1$c%1$ccreate_output:%1$c%3$clea rdi, [rel output]%1$c%3$clea rsi, [rel output_name]%1$c%3$cmov rdx, [rel file_num]%1$c%3$ccall _sprintf%1$c%1$ccreate_command:%1$c%3$clea rdi, [rel final_cmd]%1$c%3$clea rsi, [rel command]%1$c%3$clea rdx, [rel output]%1$c%3$clea rcx, [rel path]%1$c%3$clea r8, [rel object]%1$c%3$ccall _sprintf%1$c%1$ccreate_file:%1$c%3$clea rdi, [rel path]%1$c%3$cmov rsi, 0x202%1$c%3$cmov rax, 0x2000005%1$c%3$cmov rdx, 644o%1$c%3$csyscall%1$c%1$c%3$cmov rdi, rax%1$c%3$clea rsi, [rel file_content]%1$c%3$cmov rdx, 10%1$c%3$cmov rcx, 34%1$c%3$cmov r8, 9%1$c%3$clea r9, [rel file_content]%1$c%3$cmov r10, [rel file_num]%1$c%3$clea rbx, [rel file_name]%1$c%3$cpush rbx%1$c%3$clea rbx, [rel output_name]%1$c%3$cpush rbx%1$c%3$clea rbx, [rel command]%1$c%3$cpush rbx%1$c%3$cpush rbx%1$c%3$ccall _dprintf%1$c%3$cpop rbx%1$c%3$cpop rbx%1$c%3$cpop rbx%1$c%3$cpop rbx%1$c%3$cmov r12, [rel file_num]%1$c%3$ccmp r12, 0%1$c%3$cjle exit%1$c%3$clea rdi, [rel final_cmd]%1$c%3$ccall _system%1$c%1$cexit:%1$c%3$cpop rbx%1$c%3$cret%1$c", 0
+	db "section .data%1$ccheck_file:%1$c	db %2$cSully_5.s%2$c, 0%1$cfile_name:%1$c	db %2$c%8$s%2$c, 0%1$coutput_name:%1$c	db %2$c%7$s%2$c, 0%1$ccommand:%1$c	db %2$c%5$s%2$c, 0%1$cfile_content:%1$c	db %2$c%3$s%2$c, 0%1$c%1$csection .bss%1$cfinal_cmd:	resb 255%1$cpath:		resb 15%1$coutput:		resb 15%1$cobject:		resb 15%1$cfile_num:	resb 4%1$c%1$csection .text%1$c	global _main%1$c	extern _sprintf%1$c	extern _dprintf%1$c	extern _system%1$c	extern _access%1$c%1$c_main:%1$c	push rbx%1$c	mov rdi, %4$d%1$c	mov [rel file_num], rdi%1$c	lea rdi, [rel check_file]%1$c	mov rsi, 0x04%1$c	call _access%1$c	cmp rax, -1%1$c	je create_path%1$c	mov rdi, [rel file_num]%1$c	dec rdi%1$c	mov [rel file_num], rdi%1$c%1$ccreate_path:%1$c	lea rdi, [rel path]%1$c	lea rsi, [rel file_name]%1$c	mov rdx, [rel file_num]%1$c	mov rcx, 's'%1$c	call _sprintf%1$c%1$ccreate_object:%1$c	lea rdi, [rel object]%1$c	lea rsi, [rel file_name]%1$c	mov rdx, [rel file_num]%1$c	mov rcx, 'o'%1$c	call _sprintf%1$c%1$ccreate_output:%1$c	lea rdi, [rel output]%1$c	lea rsi, [rel output_name]%1$c	mov rdx, [rel file_num]%1$c	call _sprintf%1$c%1$ccreate_command:%1$c	lea rdi, [rel final_cmd]%1$c	lea rsi, [rel command]%1$c	lea rdx, [rel output]%1$c	lea rcx, [rel path]%1$c	lea r8, [rel object]%1$c	call _sprintf%1$c%1$ccreate_file:%1$c	lea rdi, [rel path]%1$c	mov rax, 0x2000005%1$c	mov rdx, 0o644%1$c	mov rsi, 0x0202%1$c	syscall%1$c%1$c	mov rdi, rax%1$c	lea rsi, [rel file_content]%1$c	mov rdx, 10%1$c	mov rcx, 34%1$c	lea r8, [rel file_content]%1$c	mov r9, [rel file_num]%1$c	lea rbx, [rel file_name]%1$c	push rbx%1$c	lea rbx, [rel output_name]%1$c	push rbx%1$c	lea rbx, [rel command]%1$c	push rbx%1$c	push rbx%1$c	call _dprintf%1$c	pop rbx%1$c	pop rbx%1$c	pop rbx%1$c	pop rbx%1$c	mov r12, [rel file_num]%1$c	cmp r12, 0%1$c	jle exit%1$c	lea rdi, [rel final_cmd]%1$c	call _system%1$c%1$cexit:%1$c	pop rbx%1$c	ret%1$c", 0
 
 section .bss
 final_cmd:	resb 255
@@ -25,8 +25,7 @@ section .text
 	extern _access
 
 _main:
-	push rbp
-	mov rbp, rsp
+	push rbx
 	mov rdi, 5
 	mov [rel file_num], rdi
 	lea rdi, [rel check_file]
@@ -68,18 +67,17 @@ create_command:
 
 create_file:
 	lea rdi, [rel path]
-	mov rsi, 0x202
 	mov rax, 0x2000005
-	mov rdx, 644o
+	mov rdx, 0o644
+	mov rsi, 0x0202
 	syscall
 
 	mov rdi, rax
 	lea rsi, [rel file_content]
 	mov rdx, 10
 	mov rcx, 34
-	mov r8, 9
-	lea r9, [rel file_content]
-	mov r10, [rel file_num]
+	lea r8, [rel file_content]
+	mov r9, [rel file_num]
 	lea rbx, [rel file_name]
 	push rbx
 	lea rbx, [rel output_name]
