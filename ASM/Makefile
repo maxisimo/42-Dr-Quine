@@ -1,4 +1,3 @@
-FLAG= -Wall -Werror -Wextra
 BLUE1 =  \033[38;5;51m
 BLUE2 = \033[38;5;99m
 END = \033[0m

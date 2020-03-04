@@ -1,4 +1,3 @@
-FLAG= -Wall -Werror -Wextra
 BLUE1 =  \033[38;5;51m
 BLUE2 = \033[38;5;99m
 END = \033[0m
@@ -11,19 +10,21 @@ OBJ_C = $(SRC_C:.c=.o)
 OBJ_G = $(SRC_G:.c=.o)
 OBJ_S = $(SRC_S:.c=.o)
 
+CFLAGS= -Wall -Werror -Wextra
+
 all: start Colleen Grace Sully
 
 Colleen: $(OBJ_C)
 	@echo "$(BLUE1)[QUINE] :$(END) $(BLUE2)Compiling Colleen ...$(END)";
-	@gcc $(OBJ_C) -o Colleen
+	@gcc $(CFLAGS) $(OBJ_C) -o Colleen
 
 Grace: $(OBJ_G)
 	@echo "$(BLUE1)[QUINE] :$(END) $(BLUE2)Compiling Grace ...$(END)";
-	@gcc $(OBJ_G) -o Grace
+	@gcc $(CFLAGS) $(OBJ_G) -o Grace
 
 Sully: $(OBJ_S)
 	@echo "$(BLUE1)[QUINE] :$(END) $(BLUE2)Compiling Sully ...$(END)";
-	@gcc $(OBJ_S) -o Sully
+	@gcc $(CFLAGS) $(OBJ_S) -o Sully
 
 start:
 	@echo "\n";
@@ -37,11 +38,6 @@ start:
 	@echo "			\\033[38;5;18m      ###                                                        $(END)";
 	@echo "			\\033[38;5;17m     ###                                                         $(END)";
 	@echo "\n";
-
-
-%.o: %.s
-	@echo "$(BLUE1)[QUINE] :$(END) $(BLUE2)Compiling $<$(END)";
-	@gcc $(FLAG) -c $< -o $@ $(INC)
 
 clean:
 	@echo "\033[K$(BLUE1)[QUINE] :$(END) $(BLUE2)Cleaning object files ...$(END)";
