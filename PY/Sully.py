@@ -4,7 +4,7 @@ def file(i):
 	return 'Sully_' + str(i) + '.py'
 
 def display(f, s, i):
-	f.write(s.format(s = s, q = chr(34), i = i))
+	f.write(s.format(s = s, c = chr(34), i = i))
 
 s = """from os import system
 
@@ -12,9 +12,9 @@ def file(i):
 	return 'Sully_' + str(i) + '.py'
 
 def display(f, s, i):
-	f.write(s.format(s = s, q = chr(34), i = i))
+	f.write(s.format(s = s, c = chr(34), i = i))
 
-s = {q}{q}{q}{s}{q}{q}{q}
+s = {c}{c}{c}{s}{c}{c}{c}
 
 if __name__ == '__main__':
 	i = {i}

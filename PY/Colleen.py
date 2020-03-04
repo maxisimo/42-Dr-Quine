@@ -1,8 +1,15 @@
-# Un commentaire
+# This program will print its own source
 def display(s) :
-	print(s%s)
+	print(s.format(s = s, c = chr(34)))
 
 if __name__ == '__main__':
-	# Un commentaire
-	s = "# Un commentaire\ndef display(s) :\n\tprint(s%%s)\n\nif __name__ == '__main__':\n\t# Un commentaire\n\ts = %r\n\tdisplay(s)"
+	# Another comment
+	s = """# This program will print its own source
+def display(s) :
+	print(s.format(s = s, c = chr(34)))
+
+if __name__ == '__main__':
+	# Another comment
+	s = {c}{c}{c}{s}{c}{c}{c}
+	display(s)"""
 	display(s)
