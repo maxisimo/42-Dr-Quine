@@ -19,8 +19,13 @@ s = {c}{c}{c}{s}{c}{c}{c}
 if __name__ == '__main__':
 	i = {i}
 	try:
+		with open(file(5)):
+			i = i - 1
+	except:
+		pass
+	try:
 		with open(file(i), 'w') as f:
-			display(f, s, i - 1)
+			display(f, s, i)
 	except:
 		exit(1)
 	if i > 0:
@@ -30,8 +35,13 @@ if __name__ == '__main__':
 if __name__ == '__main__':
 	i = 5
 	try:
+		with open(file(5)):
+			i = i - 1
+	except:
+		pass
+	try:
 		with open(file(i), 'w') as f:
-			display(f, s, i - 1)
+			display(f, s, i)
 	except:
 		exit(1)
 	if i > 0:
