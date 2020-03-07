@@ -5,8 +5,8 @@
 
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Skills-Algorithm&AI-9cf"
-    <img src="https://img.shields.io/badge/Objectives-self--replication-brightgreen"
+    <img src="https://img.shields.io/badge/Skills-Algorithm&AI-9cf">
+    <img src="https://img.shields.io/badge/Objectives-self--replication-brightgreen">
 </p>
 
 This small algo project invites you to confront the principle of self-reproduction and the problems that derive from it. It is a perfect introduction to more complex projects, particularly malware projects.
