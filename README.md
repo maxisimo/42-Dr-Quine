@@ -3,12 +3,11 @@
 </a>
 <p align="center"><img src="https://user-images.githubusercontent.com/34480775/75114240-db9d9280-5654-11ea-9fa2-18f534e4bcc5.JPG" /></p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Skills](https://img.shields.io/badge/Skills-Algorithm&AI-9cf)
-![Objectives](https://img.shields.io/badge/Objectives-self--replication-brightgreen)
 
+<p align="center">
+    <img src="https://img.shields.io/badge/Skills-Algorithm&AI-9cf"
+    <img src="https://img.shields.io/badge/Objectives-self--replication-brightgreen"
+</p>
 
 This small algo project invites you to confront the principle of self-reproduction and the problems that derive from it. It is a perfect introduction to more complex projects, particularly malware projects.
 
