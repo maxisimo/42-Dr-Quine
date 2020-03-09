@@ -1,8 +1,9 @@
 # This program will print its own source in a file named Grace_kid.py
+
 def display(f, s):
 	f.write(s.format(s = s, c = chr(34)))
 
-def ft(s):
+def grace(s):
 	if __name__ == '__main__':
 		try:
 			with open('Grace_kid.py', 'w') as f:
@@ -11,10 +12,11 @@ def ft(s):
 			exit(1)
 
 s = """# This program will print its own source in a file named Grace_kid.py
+
 def display(f, s):
 	f.write(s.format(s = s, c = chr(34)))
 
-def ft(s):
+def grace(s):
 	if __name__ == '__main__':
 		try:
 			with open('Grace_kid.py', 'w') as f:
@@ -24,7 +26,7 @@ def ft(s):
 
 s = {c}{c}{c}{s}{c}{c}{c}
 
-ft(s)
+grace(s)
 """
 
-ft(s)
+grace(s)
