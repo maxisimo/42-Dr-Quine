@@ -18,31 +18,25 @@ s = {c}{c}{c}{s}{c}{c}{c}
 
 if __name__ == '__main__':
 	i = {i}
-	try:
-		with open(file(5)):
-			i = i - 1
-	except:
-		pass
-	try:
-		with open(file(i), 'w') as f:
-			display(f, s, i)
-	except:
-		exit(1)
+	if not __debug__:
+		i -= 1
 	if i > 0:
-		system('python ' + file(i))
+		try:
+			with open(file(i), 'w') as f:
+				display(f, s, i)
+		except:
+			exit(1)
+		system("python -O " + file(i))
 """
 
 if __name__ == '__main__':
 	i = 5
-	try:
-		with open(file(5)):
-			i = i - 1
-	except:
-		pass
-	try:
-		with open(file(i), 'w') as f:
-			display(f, s, i)
-	except:
-		exit(1)
+	if not __debug__:
+		i -= 1
 	if i > 0:
-		system('python ' + file(i))
+		try:
+			with open(file(i), 'w') as f:
+				display(f, s, i)
+		except:
+			exit(1)
+		system("python -O " + file(i))
