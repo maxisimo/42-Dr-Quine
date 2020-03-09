@@ -20,7 +20,7 @@ if __name__ == '__main__':
 	i = {i}
 	if not __debug__:
 		i -= 1
-	if i > 0:
+	if i >= 0:
 		try:
 			with open(file(i), 'w') as f:
 				display(f, s, i)
@@ -33,7 +33,7 @@ if __name__ == '__main__':
 	i = 5
 	if not __debug__:
 		i -= 1
-	if i > 0:
+	if i >= 0:
 		try:
 			with open(file(i), 'w') as f:
 				display(f, s, i)
