@@ -1,0 +1,22 @@
+https://beta.hackndo.com/assembly-basics/
+https://syscalls.w3challs.com/?arch=x86_64
+https://www.tutorialspoint.com/assembly_programming/assembly_introduction.htm
+https://perso.univ-st-etienne.fr/ezequel/L2info/coursAssembleur_x86_64.pdf
+http://man7.org/linux/man-pages/man2/open.2.html
+https://stackoverflow.com/questions/8312290/how-to-open-a-file-in-assembler-and-modify-it
+https://stackoverflow.com/questions/47834513/64-bit-syscall-documentation-for-macos-assembly
+https://stackoverflow.com/questions/45403263/syscall-osx-create-file-open
+https://stackoverflow.com/questions/26394359/mach-o-64-bit-format-does-not-support-32-bit-absolute-addresses-nasm
+https://openclassrooms.com/forum/sujet/assembleur-en-general
+https://cs.lmu.edu/~ray/notes/nasmtutorial/
+https://www.nasm.us/doc/
+https://www.unilim.fr/pages_perso/tristan.vaccon/cours_nasm.pdf
+http://www.lacl.fr/tan/asm
+https://www.cs.uaf.edu/2015/fall/cs301/lecture/09_16_stack.html
+http://ref.x86asm.net/
+
+lldb tutorial:
+https://lldb.llvm.org/use/tutorial.html
+
+syscalls:
+https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master
