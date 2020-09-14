@@ -20,3 +20,16 @@ https://lldb.llvm.org/use/tutorial.html
 
 syscalls:
 https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master
+
+Otion -D gcc :
+permet de définir une macro avec gcc (https://renenyffenegger.ch/notes/development/languages/C-C-plus-plus/GCC/options/D_/index)
+Option -O python :
+permet de définir la variable __debug__ à true, la commande "if not" fait le reste
+https://docs.python.org/fr/3.9/using/cmdline.html
+https://docs.python.org/fr/3.9/library/constants.html#__debug__
+
+DEFINE & MACRO Grace.s :
+macros : https://www.tutorialspoint.com/assembly_programming/assembly_macros.htm
+define & macros (chapter 11) : http://www.egr.unlv.edu/~ed/assembly64.pdf
+define et macro sont deux mots clefs permettant de definir des ... macros ! Define est utilisé lors de la declaration d'une
+macro sur une seule ligne tandis que macro est utilisé lors de la declaration d'une macro sur plusieurs lignes.

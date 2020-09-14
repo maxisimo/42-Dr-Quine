@@ -39,17 +39,16 @@ start:
 
 
 %.o: %.s
-	@echo "$(BLUE1)[QUINE] :$(END) $(BLUE2)Compiling $<$(END)";
 	@nasm -f macho64 $<
 
 clean:
 	@echo "\033[K$(BLUE1)[QUINE] :$(END) $(BLUE2)Cleaning object files ...$(END)";
-	@/bin/rm -rf $(OBJ_S) $(OBJ_G) $(OBJ_C)
+	@rm -rf $(OBJ_S) $(OBJ_G) $(OBJ_C)
 	@echo "$(BLUE2)Done$(END)";
 
 fclean: clean
 	@echo "\033[K$(BLUE1)[QUINE] :$(END) $(BLUE2)Cleaning binary files ...$(END)";
-	@/bin/rm -rf Sully Colleen Grace Sully_* Grace_kid.s
+	@rm -rf Sully Colleen Grace Sully_* Grace_kid.s
 	@echo "$(BLUE2)Done$(END)";
 
 re: fclean all
