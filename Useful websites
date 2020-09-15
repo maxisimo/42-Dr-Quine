@@ -1,3 +1,13 @@
+Assembly language is a “low-level” language and provides the basic instructional
+interface to the computer processor. Assembly language is as close to the processor as
+you can get as a programmer. Programs written in a high-level language are translated
+into assembly language in order for the processor to execute the program. The highlevel language is an abstraction between the language and the actual processor
+instructions. As such, the idea that “assembly is dead” is nonsense.
+Assembly language gives you direct control of the system's resources. This involves
+setting processor registers, accessing memory locations, and interfacing with other
+hardware elements. This requires a significantly deeper understanding of exactly how
+the processor and memory work.
+
 https://beta.hackndo.com/assembly-basics/
 https://syscalls.w3challs.com/?arch=x86_64
 https://www.tutorialspoint.com/assembly_programming/assembly_introduction.htm
@@ -12,8 +22,6 @@ https://cs.lmu.edu/~ray/notes/nasmtutorial/
 https://www.nasm.us/doc/
 https://www.unilim.fr/pages_perso/tristan.vaccon/cours_nasm.pdf
 http://www.lacl.fr/tan/asm
-https://www.cs.uaf.edu/2015/fall/cs301/lecture/09_16_stack.html
-http://ref.x86asm.net/
 
 lldb tutorial:
 https://lldb.llvm.org/use/tutorial.html
@@ -33,3 +41,38 @@ macros : https://www.tutorialspoint.com/assembly_programming/assembly_macros.htm
 define & macros (chapter 11) : http://www.egr.unlv.edu/~ed/assembly64.pdf
 define et macro sont deux mots clefs permettant de definir des ... macros ! Define est utilisé lors de la declaration d'une
 macro sur une seule ligne tandis que macro est utilisé lors de la declaration d'une macro sur plusieurs lignes.
+
+CPU registers :
+A CPU register, or just register, is a temporary storage or working location built into the
+CPU itself (separate from memory). Computations are typically performed by the CPU
+using registers.
+There is sixteen registers : https://www.cs.uaf.edu/2015/fall/cs301/lecture/09_16_stack.html
+(fr)
+Le processeur ne peut pas directement realiser une instruction entre deux variables : Les sorties de ses unites de calcul
+ne sont pas directement connectees a la memoire centrale dans laquelle les variables sont normalement stockes. Il doit alors
+utiliser ses propres emplacements memoires avant de demander le transfere du resultat d’une instruction dans votre memoire
+centrale. Ces emplacements memoire, appeles ”registres”, contiennent des informations sur l’etat courant du processeur et
+sont utilises par celui-ci pour realiser des instructions et sauvegarder le resultat. Pour acceder au contenu des registres,
+le nom d’un registre sert d’alias permettant de recuperer ou modifier la valeur qu’il contient (similairement au fonctionnement
+des constantes).
+En assembleur, differents types de registres processeur sont utilisables. : les registres generaux, les registres de controle
+et les registres de segment. https://www.cs.uaf.edu/2015/fall/cs301/lecture/09_16_stack.html
+
+Segments :
+Un programme assembleur est en general s'epare en plusieurs parties (appelees segments). Trois segments sont consideres comme
+standard en assembleur X86 : .data, .bss et .text.
+• Le segment .data contient les definitions des variables initialisees a une ou plusieurs valeurs specifiees
+(instructions db, dw, dd...).
+• Le segment .bss contient les definitions des variables non-initialisees, c’est a dire uniquement allouees en memoire. 
+instructions ´ resb, resw, resd...).
+• Le segment .text contient le code execute par votre programme.
+
+bss :
+Les instructions de declarations de variables non-initialisees allouent un tableau dont le nombre d’element est definis par
+l’operande de droite :
+var1 resb 1024 ; "Reserve 1024 Bytes"
+var2 resw 1 ; "Reserve 1 Word"
+var3 resd 12 ; "Reserve 12 Double"
+var3 resq 24 ; "Reserve 24 Quad"
+var4 rest 2; "Reserve 2 exTended word"
+Dans cet exemple, var1 est l’adresse du premier element d’un tableau de 1024 octets. 
