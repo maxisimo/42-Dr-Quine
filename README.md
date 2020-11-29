@@ -47,7 +47,7 @@ For the second program :
 ### Sully
 For the last program :
 * The executable must be named Sully.
-* When executed the program writes in a file named Sully_X.c/Sully_X.s. The X will be an interger given in the source. Once the file is created, the program compiles this file and then runs the new program (which will have the name of its source file).
+* When executed the program writes in a file named Sully_X.c/Sully_X.s. The X will be an integer given in the source. Once the file is created, the program compiles this file and then runs the new program (which will have the name of its source file).
 * Stopping the program depends on the file name : the resulting program will be executed only if the integer X is greater than 0.
 * An integer is therefore present in the source of your program and will have to evolve by decrementing every time you create a source file from the execution of the program.
 * You have no constraints on the source code, apart from the integer that will be set to 5 at first.
@@ -63,7 +63,7 @@ run `make`
 ```
 ## Bonuses
 The only Bonus accepted during p2p is to have redone this project entirely in the language of your choice.
-I choosed to redone it in Python.
+I chose to redo it in Python.
 
 ### Prerequies
 For the bonuses, this project uses [Homebrew](https://brew.sh/) and [Python](https://programwithus.com/learn-to-code/install-python3-mac/). Go check them out if you don't have them locally installed.
