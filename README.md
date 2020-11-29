@@ -79,3 +79,5 @@ python3 Sully
 - https://www.unilim.fr/pages_perso/tristan.vaccon/cours_nasm.pdf
 - http://www.lacl.fr/tan/asm
 - https://www.cs.uaf.edu/2015/fall/cs301/lecture/09_16_stack.html
+
+# Rate : 125/100
